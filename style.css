@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    background: rgb(63,94,251);
+background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.display {
+    width: 150px;
+    margin-right: 7rem;
+}
+button {
+    color: #494949;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: #ffffff;
+	padding: 20px;
+	border: 4px solid #494949;
+	display: inline-block;
+	transition: all 0.4s ease 0s;
+}
+button:hover{
+    color: #ffffff;
+	background: #df4cdf;
+	border-color: #df4cdf;
+	transition: all 0.4s ease 0s;
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(4,10rem);
+    grid-template-rows: repeat(4,10rem);
+    grid-gap: 2rem;
+}
+
+.card {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
+    cursor: pointer;
+}
+
+.face,
+.back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    pointer-events: none;
+    
+}
+
+.face {
+    transform: rotateY(-180deg);
+}
+
+.back {
+    background-color: #fff;
+    backface-visibility: hidden;
+}
+
+.toggleCard {
+    transform: rotateY(180deg);
+}
